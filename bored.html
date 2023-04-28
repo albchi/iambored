@@ -1,0 +1,41 @@
+<header>
+</header>
+<body>
+
+   <h1> <center> I Am Bored Page</center>  </h1>
+ 
+   <div id="div1"> <p></p></div>
+   <button type ="button" onClick="location.reload()"> Try Another </button>
+
+   <script>
+
+      document.body.onload = fAddToBox;
+
+      async function fAddToBox() {
+
+
+         const response = await fetch("https://www.boredapi.com/api/activity");
+         const jsonData = await response.json();
+
+         console.log(jsonData)
+
+
+         // const newDiv = document.createElement("div");
+
+         // and give it some content
+         // const newContent = document.createTextNode(jsonData["activity"]);
+           
+         // add the text node to the newly created div
+         // newDiv.appendChild(newContent);
+
+         // add the newly created element and its content into the DOM
+         // const currentDiv = document.getElementById("div2");
+         // document.body.insertBefore(newDiv, currentDiv);
+
+         // const currentDiv1 = document.getElementById("div1").innerHTML="Woohoo";
+         const cDiv1 = document.getElementById("div1").innerHTML=(jsonData["activity"]);
+
+       }
+   </script>
+
+</body>
