@@ -1,0 +1,88 @@
+<head>
+   <h1> <center> A Web App to Cure YOUR Boredom </center> </h1>
+</head>
+
+<body>
+
+   <div id="div1"> 
+      <p></p>
+   </div>
+   <button onClick="getElementById('div1').innerHTML = Date()"> Get time </button>
+   <br>
+   <div id="div2"> 
+      <p></p>
+   </div>
+      <!-- <button type ="button" onClick="location.reload()"> Refresh </button> --!>
+      <button onClick="location.reload()"> Refresh </button>
+   <br>
+   <div id="div3"> 
+      <p></p>
+   </div>
+      <!-- <button type="button"> Single </button> --!>
+      <!-- <button onClick="getElementById('div3').innerHTML = Date()"> Single</button> --!>
+      <button onClick="getElementById('div3').innerHTML = fAddToBox2()
+"> Single</button>
+ 
+   <div id="div4"> 
+      <p></p>
+   </div>
+      <!-- <button type="button"> Single </button> --!>
+      <button onClick="getElementById('div4').innerHTML = fCouple()"> Couple </button>
+ 
+
+
+   <script>
+
+      document.body.onload = fAddToBox;
+
+      async function fAddToBox2() {
+ 
+
+
+         const response = await fetch("https://www.boredapi.com/api/activity?participants=1");
+         const jsonData = await response.json();
+
+         // console.log(jsonData) // debug
+
+         // const cDiv1 = document.getElementById("div1").innerHTML=(jsonData["activity"]);
+         // document.getElementById("div2").innerHTML=(jsonData["activity"]);
+         console.log(jsonData) // debug
+         console.log(jsonData) // debug
+         return jsonData["activity"];
+
+       }
+
+      function fCouple() {
+         //document.getElementById("div4").innerHTML=("Make love!");
+         //const response = await fetch("http://localhost:82/hiya");
+         //const jsonData = await response.json();
+
+
+         //return jsonData;
+         return "Make babies!";
+
+
+
+      }
+
+
+
+
+
+      async function fAddToBox() {
+ 
+
+
+         const response = await fetch("https://www.boredapi.com/api/activity");
+         const jsonData = await response.json();
+
+         console.log(jsonData) // debug
+
+         // const cDiv1 = document.getElementById("div1").innerHTML=(jsonData["activity"]);
+         document.getElementById("div2").innerHTML=(jsonData["activity"]);
+
+       }
+
+   </script>
+
+</body>

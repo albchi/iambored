@@ -1,0 +1,23 @@
+curl  https://www.boredapi.com/api/activity   
+
+{"activity":"Give your pet ten minutes of focused attention","type":"relaxation","participants":1,"price":0,"link":"","key":"9937387","accessibility":0}%                                                                     
+
+---
+
+# note the double quotes around the entire curl argument
+curl     "https://www.boredapi.com/api/activity?participants=1"
+
+{"activity":"Learn the periodic table","type":"education","participants":1,"price":0,"link":"https://en.wikipedia.org/wiki/Periodic_table","key":"3621244","accessibility":0.6}%     
+
+--- NGINX on MBP ---
+
+conf:
+   vi /opt/homebrew/etc/nginx/nginx.conf 
+
+sudo nginx -t
+nginx
+
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:82/hiya. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 200
+
+about:config > security.fileuri.strict_origin_policy > false
